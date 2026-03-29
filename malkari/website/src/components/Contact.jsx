@@ -59,7 +59,10 @@ const Contact = () => {
                                 <div className="ml-6">
                                     <h4 className="text-lg font-bold text-gray-900 group-hover:text-primary-700 transition-colors">Call Us</h4>
                                     <p className="mt-1 text-gray-600 font-medium">
-                                        <a href="tel:+917382451357" className="hover:text-primary-600 transition-colors">+91 9849274215</a>
+                                        <a href="tel:+91 9849274215" className="hover:text-primary-600 transition-colors">+91 9849274215</a>
+                                    </p>
+                                    <p className="mt-1 text-gray-600 font-medium">
+                                        <a href="tel:+91 9493193525" className="hover:text-primary-600 transition-colors">+91 9493193525</a>
                                     </p>
                                 </div>
                             </motion.div>
@@ -78,6 +81,10 @@ const Contact = () => {
                                     <p className="mt-1 text-gray-600">
                                         <a href="mailto:venkat.malkari@gmail.com" className="hover:text-primary-600 transition-colors">
                                             venkat.malkari@gmail.com
+                                        </a>
+                                        <br />
+                                        <a href="mailto:mkmalkari97@gmail.com" className="hover:text-primary-600 transition-colors">
+                                            mkmalkari97@gmail.com
                                         </a>
                                     </p>
                                 </div>

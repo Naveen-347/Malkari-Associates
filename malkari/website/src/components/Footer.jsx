@@ -33,7 +33,9 @@ const Footer = () => {
                             <p className="text-gray-400 text-sm">25/114 old town ,</p>
                             <p className="text-gray-400 text-sm">vadlabanda street old town Anantapur, Andhra Pradesh 515001, India</p>
                             <p className="text-gray-400 text-sm mt-4 font-semibold text-white">+91 9849274215</p>
+                            <p className="text-gray-400 text-sm mt-4 font-semibold text-white">+91 9493193525</p>
                             <p className="text-gray-400 text-sm">venkat.malkari@gmail.com</p>
+                            <p className="text-gray-400 text-sm">mkmalkari97@gmail.com</p>
                         </div>
                     </div>
                 </div>

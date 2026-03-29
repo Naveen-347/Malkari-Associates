@@ -23,7 +23,13 @@ const Hero = () => {
                             transition={{ delay: 0.2, duration: 0.5 }}
                             className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 mb-6 backdrop-blur-sm"
                         >
-                            <span className="text-secondary-400 font-semibold tracking-wide uppercase text-xs md:text-sm">Chartered Accountants</span>
+                            <span className="text-white font-semibold tracking-wide uppercase text-xs md:text-sm">
+                                Malkari Venkata Rao
+                            </span>
+                            <br />
+                            <span className="text-white font-semibold tracking-wide uppercase text-xs md:text-sm">
+                                Malkari Manoj Kumar
+                            </span>
                         </motion.div>
 
                         <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 font-display">
