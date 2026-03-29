@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-gray-800 bg-gray-50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    /* Space for sticky navbar */
+  }
+
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+}
+
+.glass-nav {
+  @apply bg-white/90 backdrop-blur-md border-b border-white/20 shadow-sm;
+}
+
+.glass-card {
+  @apply bg-white/70 backdrop-blur-sm border border-white/50 shadow-xl;
+}
