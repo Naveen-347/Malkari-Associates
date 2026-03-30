@@ -11,10 +11,13 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
                     <div>
-                        <h3 className="text-2xl font-bold mb-6 font-display">
+                        <h3 className="text-2xl font-bold mb-2 font-display">
                             Malkari <br />
                             <span className="text-secondary-500">& Associates</span>
                         </h3>
+                        <p className="text-primary-400 text-xs tracking-wider uppercase font-semibold mb-6">
+                            One Step for All Tax Compliances
+                        </p>
                         <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
                             Dedicated to professional excellence and integrity in financial services. Your trusted partner for growth, compliance, and strategic financial planning.
                         </p>

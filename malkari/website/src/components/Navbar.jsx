@@ -6,18 +6,23 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // ✅ Fixed Scroll Detection
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      setScrolled(scrollTop > 10);
     };
+
+    handleScroll(); // run once
     window.addEventListener('scroll', handleScroll);
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
     { name: 'Home', id: 'home' },
     { name: 'Services', id: 'services' },
-
     { name: 'Contact', id: 'contact' },
   ];
 
@@ -37,22 +42,42 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-[100] transition-all duration-300 ${scrolled ? 'glass-nav py-3' : 'bg-transparent py-5'
+      className={`fixed w-full z-[100] transition-all duration-300 ${scrolled
+        ? 'bg-white shadow-md py-3'
+        : 'bg-transparent py-5'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
 
-          {/* Logo */}
-          <h1
-            className={`text-2xl font-bold transition-colors ${scrolled ? 'text-primary-900' : 'text-white'
-              }`}
-          >
-            Malkari
-            <span className="block text-sm md:inline md:text-2xl">
-              {' '} & Associates
-            </span>
-          </h1>
+          {/* Logo Section */}
+          <div className="flex items-center gap-3 md:gap-5 py-1">
+
+            <img
+              src="/logo.png"
+              alt="Malkari & Associates Logo"
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain shrink-0"
+            />
+
+            <div className="flex flex-col justify-center">
+              <h1
+                className={`text-xl md:text-[1.7rem] font-bold transition-colors duration-300 ${scrolled ? 'text-primary-600' : 'text-white'
+                  }`}
+              >
+                Malkari
+                <span className="block text-[15px] md:inline md:text-[1.7rem]">
+                  {' '} & Associates
+                </span>
+              </h1>
+
+              <p
+                className={`text-[10px] sm:text-[11px] md:text-xs tracking-wider font-semibold uppercase mt-1 transition-colors duration-300 ${scrolled ? 'text-primary-600' : 'text-white/80'
+                  }`}
+              >
+                One Step for All Tax Compliances
+              </p>
+            </div>
+          </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
@@ -60,7 +85,7 @@ const Navbar = () => {
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className={`px-3 py-2 rounded-md font-medium transition-colors relative group ${scrolled
+                className={`px-3 py-2 rounded-md font-medium transition-colors ${scrolled
                   ? 'text-gray-700 hover:text-primary-600'
                   : 'text-white/90 hover:text-white'
                   }`}
@@ -70,10 +95,14 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Button */}
           <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+              {isOpen ? (
+                <X size={28} className={scrolled ? 'text-black' : 'text-white'} />
+              ) : (
+                <Menu size={28} className={scrolled ? 'text-black' : 'text-white'} />
+              )}
             </button>
           </div>
         </div>
